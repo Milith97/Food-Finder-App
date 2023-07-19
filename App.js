@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import MainTabScreen from './Pagers/MainTabScreen';
 
+import { DrawerContent } from './Pagers/DrawerContent';
 
 const Drawer = createDrawerNavigator();
 
@@ -27,11 +28,12 @@ function NotificationsScreen({ navigation }) {
   );
 } */
 
-export default function App() {
+
+const App = () => {
   return (
 
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home">
+      <Drawer.Navigator DrawerContent={props => <DrawerContent {...props}/> }>
         <Drawer.Screen name="Home" component={MainTabScreen} />
        {/*  <Drawer.Screen name="Notifications" component={NotificationsScreen} /> */}
       </Drawer.Navigator>
@@ -41,7 +43,7 @@ export default function App() {
   )
 }
 
-
+export default App; 
 
 
 
