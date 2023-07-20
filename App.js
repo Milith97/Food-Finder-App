@@ -1,12 +1,18 @@
 import { View, Text, Button } from 'react-native'
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+
 import MainTabScreen from './Pagers/MainTabScreen';
 
-import { DrawerContent } from './Pagers/DrawerContent';
+import DrawerContent from './Pagers/DrawerContent';
+import DetailsScreen from './Pagers/DetailsScreen';
+import ProfileScreen from './Pagers/ProfileScreen';
+import ExploreScreen from './Pagers/ExploreScreen';
+import AuthStack from './navigation/AppStack';
 
-const Drawer = createDrawerNavigator();
+
+
 
 
 /* function HomeScreen({ navigation }) {
@@ -33,17 +39,14 @@ const App = () => {
   return (
 
     <NavigationContainer>
-      <Drawer.Navigator DrawerContent={props => <DrawerContent {...props}/> }>
-        <Drawer.Screen name="Home" component={MainTabScreen} />
-       {/*  <Drawer.Screen name="Notifications" component={NotificationsScreen} /> */}
-      </Drawer.Navigator>
-</NavigationContainer>
+      <AuthStack />
+    </NavigationContainer>
 
 
   )
 }
 
-export default App; 
+export default App;
 
 
 

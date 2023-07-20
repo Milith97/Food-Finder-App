@@ -62,4 +62,4 @@ const MainTabScreen = () => {
     </Tab.Navigator>
     );
   }
-export default MainTabScreen;
+export default MainTabScreen
