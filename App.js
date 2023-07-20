@@ -1,15 +1,39 @@
 import { View, Text, Button } from 'react-native'
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import MainTabScreen from './Pagers/MainTabScreen';
 
-import DrawerContent from './Pagers/DrawerContent';
+import {DrawerContent } from './Pagers/DrawerContent';
 import DetailsScreen from './Pagers/DetailsScreen';
 import ProfileScreen from './Pagers/ProfileScreen';
 import ExploreScreen from './Pagers/ExploreScreen';
-import AuthStack from './navigation/AppStack';
+
+
+const Drawer = createDrawerNavigator();
+
+const App = () => {
+  return (
+
+    //Use Fist letter in Simple letter(drawerContent)
+    <NavigationContainer>
+      <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />}>
+        <Drawer.Screen name="Home" component={MainTabScreen} />
+       {/*  <Drawer.Screen name="Update" component={DetailsScreen} /> 
+        <Drawer.Screen name="Profile" component={ProfileScreen} /> 
+        <Drawer.Screen name="Explore" component={ExploreScreen} />  */}
+      </Drawer.Navigator>
+    </NavigationContainer>
+
+
+  )
+}
+
+export default App;
+
+
+
 
 
 
@@ -33,23 +57,5 @@ function NotificationsScreen({ navigation }) {
     </View>
   );
 } */
-
-
-const App = () => {
-  return (
-
-    <NavigationContainer>
-      <AuthStack />
-    </NavigationContainer>
-
-
-  )
-}
-
-export default App;
-
-
-
-
 
 

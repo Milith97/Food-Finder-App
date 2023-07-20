@@ -1,26 +1,15 @@
-/* import { View, StyleSheet } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import React from 'react'
-import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
+
 import { Avatar, Title, Caption, Paragraph, Drawer, Text, TouchableRipple, Switch } from 'react-native-paper';
+import {DrawerContentScrollView,DrawerItem} from '@react-navigation/drawer';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 
-const DrawerContent = (props) => {
+export function DrawerContent(props) {
   return (
-    <View style={{ flex: 1 }}>
-      <DrawerContentScrollView {...props} contentContainerStyle={{ backgroundcolor: '#8200d6' }}>
-        <DrawerItemList  {...props}>
-
-        </DrawerItemList>
-      </DrawerContentScrollView>
-      <View>
-
-      </View>
-    </View>
- */
-
-    /*     <View style={{ flex: 1 }}>
-          <DrawerContentScrollView {...props}>
+         <View style={{ flex: 1 }}>
+         <DrawerContentScrollView {...props}>
             <View style={styles.drawerContent}>
               <View style={styles.userInfoSection}>
                 <View style={{ flexDirection: 'row', marginTop: 15 }}>
@@ -31,10 +20,10 @@ const DrawerContent = (props) => {
                     size={50}
                   />
                   
-                  <View style={{ marginLeft: 15, flexDirection: 'column' }}>
+               {/*    <View style={{ marginLeft: 15, flexDirection: 'column' }}>
                     <Title style={styles.title}>John Doe</Title>
                     <Caption style={styles.caption}>@j_doe</Caption>
-                  </View>
+                  </View> */}
     
                 </View>
               </View>
@@ -42,7 +31,7 @@ const DrawerContent = (props) => {
           </DrawerContentScrollView>
     
           <Drawer.Section styles={styles.bottomDrawerSection}>
-            <DrawerItem>
+            <DrawerItem
               icon={({ color, size }) => (
                 <Icon
                   name="exit-to-app"
@@ -52,14 +41,12 @@ const DrawerContent = (props) => {
               )}
               label="Sign Out"
               onPress={() => { }}
-            </DrawerItem>
-          </Drawer.Section>
+              />
+          </Drawer.Section> 
         </View> 
   )
 }
-*/
 
-/* export default DrawerContent
 
 
 const styles = StyleSheet.create({
@@ -106,4 +93,4 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 16,
   },
-}); */
+}); 
