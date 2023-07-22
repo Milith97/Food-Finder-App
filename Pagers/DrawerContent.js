@@ -61,7 +61,7 @@ export function DrawerContent(props) {
             <DrawerItem
               icon={({ color, size }) => (
                 <Icon
-                  name="Bookmark-outline"
+                  name="bookmark-outline"
                   color={color}
                   size={size}
                 />
@@ -72,7 +72,7 @@ export function DrawerContent(props) {
             <DrawerItem
               icon={({ color, size }) => (
                 <Icon
-                  name="Setting-outline"
+                  name="cog"
                   color={color}
                   size={size}
                 />
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
     marginRight: 3,
   },
   drawerSection: {
-    marginTop: 15,
+    marginTop: 25,
   },
   bottomDrawerSection: {
     marginBottom: 15,
