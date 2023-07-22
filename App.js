@@ -6,9 +6,9 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import MainTabScreen from './Pagers/MainTabScreen';
 
 import {DrawerContent } from './Pagers/DrawerContent';
-import DetailsScreen from './Pagers/DetailsScreen';
-import ProfileScreen from './Pagers/ProfileScreen';
-import ExploreScreen from './Pagers/ExploreScreen';
+import SupportScreen from './Pagers/SupportScreen';
+import SettingsScreen from './Pagers/SettingsScreen';
+import BookmarkScreen from './Pagers/BookMarkScreen';
 
 
 const Drawer = createDrawerNavigator();
@@ -19,10 +19,11 @@ const App = () => {
     //Use Fist letter in Simple letter(drawerContent)
     <NavigationContainer>
       <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />}>
-        <Drawer.Screen name="Home" component={MainTabScreen} />
-       {/*  <Drawer.Screen name="Update" component={DetailsScreen} /> 
-        <Drawer.Screen name="Profile" component={ProfileScreen} /> 
-        <Drawer.Screen name="Explore" component={ExploreScreen} />  */}
+        <Drawer.Screen name="HomeDrawer" component={MainTabScreen} />
+        <Drawer.Screen name="SupportScreen" component={SupportScreen} /> 
+        <Drawer.Screen name="SettingsScreen" component={SettingsScreen} /> 
+        <Drawer.Screen name="BookmarkScreen" component={BookmarkScreen} /> 
+    
       </Drawer.Navigator>
     </NavigationContainer>
 
