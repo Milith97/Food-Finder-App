@@ -2,48 +2,56 @@ import { View, StyleSheet } from 'react-native'
 import React from 'react'
 
 import { Avatar, Title, Caption, Paragraph, Drawer, Text, TouchableRipple, Switch } from 'react-native-paper';
-import {DrawerContentScrollView,DrawerItem} from '@react-navigation/drawer';
+import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
-
 
 export function DrawerContent(props) {
   return (
-         <View style={{ flex: 1 }}>
-         <DrawerContentScrollView {...props}>
-            <View style={styles.drawerContent}>
-              <View style={styles.userInfoSection}>
-                <View style={{ flexDirection: 'row', marginTop: 15 }}>
-                  <Avatar.Image
-                    source={{
-                      uri: 'https://drive.google.com/file/d/1954jOaMThpZKzUPRUYY5LCa7gD7Te380/view'
-                    }}
-                    size={50}
-                  />
-                  
-               {/*    <View style={{ marginLeft: 15, flexDirection: 'column' }}>
-                    <Title style={styles.title}>John Doe</Title>
-                    <Caption style={styles.caption}>@j_doe</Caption>
-                  </View> */}
-    
+    <View style={{ flex: 1 }}>
+      <DrawerContentScrollView {...props}>
+        <View style={styles.drawerContent}>
+          <View style={styles.userInfoSection}>
+            <View style={{ flexDirection: 'row', marginTop: 15 }}>
+              <Avatar.Image
+                size={50} source={require('../assets/img/user-profile.jpg')}
+              />
+
+              <View style={{ marginLeft: 15, flexDirection: 'column' }}>
+                <Title style={styles.title}>John Doe</Title>
+                <Caption style={styles.caption}>@j_doe</Caption>
+              </View>
+
+              <View style={styles.row}>
+                <View style={styles.section}>
+                  <Paragraph style={[styles.paragraph, styles.caption]}>80</Paragraph>
+                  <Caption style={styles.caption}>Following</Caption>
+                </View>
+                <View style={styles.section}>
+                  <Paragraph style={[styles.paragraph, styles.caption]}>100</Paragraph>
+                  <Caption style={styles.caption}>Followers</Caption>
                 </View>
               </View>
+
             </View>
-          </DrawerContentScrollView>
-    
-          <Drawer.Section styles={styles.bottomDrawerSection}>
-            <DrawerItem
-              icon={({ color, size }) => (
-                <Icon
-                  name="exit-to-app"
-                  color={color}
-                  size={size}
-                />
-              )}
-              label="Sign Out"
-              onPress={() => { }}
-              />
-          </Drawer.Section> 
-        </View> 
+          </View>
+        </View>
+
+      </DrawerContentScrollView >
+
+      <Drawer.Section styles={styles.bottomDrawerSection}>
+        <DrawerItem
+          icon={({ color, size }) => (
+            <Icon
+              name="exit-to-app"
+              color={color}
+              size={size}
+            />
+          )}
+          label="Sign Out"
+          onPress={() => { }}
+        />
+      </Drawer.Section>
+    </View >
   )
 }
 
@@ -66,14 +74,17 @@ const styles = StyleSheet.create({
     lineHeight: 14,
   },
   row: {
-    marginTop: 20,
+    marginTop: 68,
     flexDirection: 'row',
     alignItems: 'center',
+
+
   },
   section: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginRight: 15,
+    marginRight: '65%',
+    marginLeft: '-60%'
   },
   paragraph: {
     fontWeight: 'bold',
