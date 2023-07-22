@@ -10,6 +10,9 @@ export function DrawerContent(props) {
     <View style={{ flex: 1 }}>
       <DrawerContentScrollView {...props}>
         <View style={styles.drawerContent}>
+
+        //User Infomation Section Completed
+
           <View style={styles.userInfoSection}>
             <View style={{ flexDirection: 'row', marginTop: 15 }}>
               <Avatar.Image
@@ -33,9 +36,68 @@ export function DrawerContent(props) {
               </View>
 
             </View>
-          </View>
-        </View>
 
+          </View>
+          <Drawer.Section style={styles.drawerSection}>
+            <DrawerItem
+              icon={({ color, size }) => (
+                <Icon
+                  name="home-outline"
+                  color={color}
+                  size={size}
+                />
+              )}
+              label="Home"
+              onPress={() => { }}
+            />
+            <DrawerItem
+              icon={({ color, size }) => (
+                <Icon
+                  name="account-outline"
+                  color={color}
+                  size={size}
+                />
+              )}
+              label="Profile"
+              onPress={() => { }}
+            />
+            <DrawerItem
+              icon={({ color, size }) => (
+                <Icon
+                  name="Bookmark-outline"
+                  color={color}
+                  size={size}
+                />
+              )}
+              label="Bookmarks"
+              onPress={() => { }}
+            />
+            <DrawerItem
+              icon={({ color, size }) => (
+                <Icon
+                  name="Setting-outline"
+                  color={color}
+                  size={size}
+                />
+              )}
+              label="Settings"
+              onPress={() => { }}
+            />
+            <DrawerItem
+              icon={({ color, size }) => (
+                <Icon
+                  name="account-check-outline"
+                  color={color}
+                  size={size}
+                />
+              )}
+              label="Support"
+              onPress={() => { }}
+            />
+          </Drawer.Section>
+
+
+        </View>
       </DrawerContentScrollView >
 
       <Drawer.Section styles={styles.bottomDrawerSection}>
