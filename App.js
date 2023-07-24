@@ -9,22 +9,28 @@ import {DrawerContent } from './Pagers/DrawerContent';
 import SupportScreen from './Pagers/SupportScreen';
 import SettingsScreen from './Pagers/SettingsScreen';
 import BookmarkScreen from './Pagers/BookMarkScreen';
-
+import SplashScreen from './Pagers/SplashScreen';
+import RootStackScreen from './Pagers/RootStackScreen';
 
 const Drawer = createDrawerNavigator();
+
 
 const App = () => {
   return (
 
     //Use Fist letter in Simple letter(drawerContent)
-    <NavigationContainer>
-      <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />}>
+    
+    <NavigationContainer > 
+    <RootStackScreen/>
+     {/*  <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />}>
         <Drawer.Screen name="HomeDrawer" component={MainTabScreen} />
         <Drawer.Screen name="SupportScreen" component={SupportScreen} /> 
         <Drawer.Screen name="SettingsScreen" component={SettingsScreen} /> 
         <Drawer.Screen name="BookmarkScreen" component={BookmarkScreen} /> 
     
-      </Drawer.Navigator>
+      </Drawer.Navigator> */}
+
+   
     </NavigationContainer>
 
 
