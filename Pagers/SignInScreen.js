@@ -61,7 +61,7 @@ export default SignInScreen
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#009387'
+    backgroundColor: '#FF6347'
   },
   header: {
     flex: 1,
