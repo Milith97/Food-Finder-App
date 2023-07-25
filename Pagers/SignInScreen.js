@@ -6,7 +6,8 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import * as Animatable from 'react-native-animatable';
 
-const SignInScreen = () => {
+const SignInScreen = ({navigation}) => {
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -32,7 +33,7 @@ const SignInScreen = () => {
           />
         </View>
 
-        <Text style={[styles.text_footer, {marginTop:35}]}> Password</Text>
+        <Text style={[styles.text_footer, { marginTop: 35 }]}> Password</Text>
         <View style={styles.action}>
           <Feather
             name="lock"
@@ -45,11 +46,41 @@ const SignInScreen = () => {
             style={styles.textInput}
             autoCapitalize='none'
           />
-          <Feather
-            name="eye-off"
-            color="grey"
-            size={20}
-          />
+          <TouchableOpacity>
+
+            <Feather
+              name="eye-off"
+              color="grey"
+              size={20}
+            />
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.button}>
+          <TouchableOpacity
+            style={styles.signIn}
+            onPress={() => { loginHandle(data.username, data.password) }}>
+
+            <LinearGradient
+              colors={['#FF6347', '#ff7759']}
+              style={styles.signIn}>
+              <Text style={[styles.textSign, { color: '#fff' }]}>Sign In</Text>
+            </LinearGradient>
+
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() => navigation.navigate('SignUpScreen')}
+            style={[styles.signIn, {
+              borderColor: '#FF6347',
+              borderWidth: 1,
+              marginTop: 15
+            }]}
+          >
+            <Text style={[styles.textSign, {
+              color: '#FF6347'
+            }]}>Sign Up</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
