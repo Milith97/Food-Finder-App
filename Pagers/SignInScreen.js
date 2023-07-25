@@ -1,4 +1,4 @@
-import { View, Text, Button, TextInput, TouchableOpacity, StyleSheet, Dimensions, Platform } from 'react-native'
+import { View, Text, Button, TextInput, TouchableOpacity, StyleSheet, Dimensions, Platform,StatusBar } from 'react-native'
 import React from 'react'
 
 import LinearGradient from 'react-native-linear-gradient';
@@ -6,12 +6,21 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import * as Animatable from 'react-native-animatable';
 
-const SignInScreen = ({navigation}) => {
+
+const SignInScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
+      <StatusBar backgroundColor='#B1C640' barStyle="light-content" />
       <View style={styles.header}>
-        <Text style={styles.text_header}>Welcome!</Text>
+        <Animatable.Image
+          animation="bounceIn"
+          duraton="1500"
+          source={require('../assets/img/img2.jpg')}
+          style={styles.logo}
+          resizeMode="stretch"
+         
+        />
       </View>
       <View style={styles.footer}>
         <Text style={styles.text_footer}> Email</Text>
@@ -96,9 +105,9 @@ const styles = StyleSheet.create({
   },
   header: {
     flex: 1,
-    justifyContent: 'flex-end',
-    paddingHorizontal: 20,
-    paddingBottom: 50
+    marginBottom:50,
+   
+
   },
   footer: {
     flex: 3,
@@ -107,6 +116,7 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 30,
     paddingHorizontal: 20,
     paddingVertical: 30
+    
   },
   text_header: {
     color: '#fff',
@@ -155,5 +165,11 @@ const styles = StyleSheet.create({
   textSign: {
     fontSize: 18,
     fontWeight: 'bold'
-  }
+  },
+  logo: {
+    width: 420,
+    height: 220,
+
+  },
+
 });
