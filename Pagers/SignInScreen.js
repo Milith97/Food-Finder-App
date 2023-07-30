@@ -1,4 +1,4 @@
-import { View, Text, Button, TextInput, TouchableOpacity, StyleSheet, Dimensions, Platform,StatusBar } from 'react-native'
+import { View, Text, Button, TextInput, TouchableOpacity, StyleSheet, Dimensions, Platform, StatusBar } from 'react-native'
 import React from 'react'
 
 import LinearGradient from 'react-native-linear-gradient';
@@ -6,8 +6,40 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import * as Animatable from 'react-native-animatable';
 
+import {AuthContext} from '../components/context';
+
+
+
 
 const SignInScreen = ({ navigation }) => {
+  const [data, setData] = React.useState({
+    username: '',
+    password: '',
+    check_textInputChange: false,
+    secureTextEntry: true,
+    isValidUser: true,
+    isValidPassword: true,
+  });
+
+  const {signIn} =React.useContext(AuthContext);
+
+  const textInputChange = (val) => {
+    if (val.trim().length >= 4) {
+      setData({
+        ...data,
+        username: val,
+        check_textInputChange: true,
+        isValidUser: true
+      });
+    } else {
+      setData({
+        ...data,
+        username: val,
+        check_textInputChange: false,
+        isValidUser: false
+      });
+    }
+  }
 
   return (
     <View style={styles.container}>
@@ -19,7 +51,7 @@ const SignInScreen = ({ navigation }) => {
           source={require('../assets/img/img2.jpg')}
           style={styles.logo}
           resizeMode="stretch"
-         
+
         />
       </View>
       <View style={styles.footer}>
@@ -34,6 +66,7 @@ const SignInScreen = ({ navigation }) => {
             placeholder="Your Email"
             style={styles.textInput}
             autoCapitalize='none'
+            onChangeText={(val) => textInputChange(val)}
           />
           <Feather
             name="check-circle"
@@ -65,10 +98,14 @@ const SignInScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
 
+        <TouchableOpacity>
+          <Text style={{ color: '#FF6347', marginTop: 10, marginLeft: 130 }}>Forgot password?</Text>
+        </TouchableOpacity>
+
         <View style={styles.button}>
           <TouchableOpacity
             style={styles.signIn}
-            onPress={() => { loginHandle(data.username, data.password) }}>
+            onPress={() => { signIn() }}>
 
             <LinearGradient
               colors={['#FF6347', '#ff7759']}
@@ -95,8 +132,7 @@ const SignInScreen = ({ navigation }) => {
     </View>
   )
 }
-
-export default SignInScreen
+export default SignInScreen;
 
 const styles = StyleSheet.create({
   container: {
@@ -105,8 +141,8 @@ const styles = StyleSheet.create({
   },
   header: {
     flex: 1,
-    marginBottom:50,
-   
+    marginBottom: 50,
+
 
   },
   footer: {
@@ -116,7 +152,7 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 30,
     paddingHorizontal: 20,
     paddingVertical: 30
-    
+
   },
   text_header: {
     color: '#fff',
