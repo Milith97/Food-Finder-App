@@ -6,6 +6,8 @@ import { useEffect } from 'react';
 
 import { DrawerContent } from './Pagers/DrawerContent';
 
+
+
 import MainTabScreen from './Pagers/MainTabScreen';
 import SupportScreen from './Pagers/SupportScreen';
 import SettingsScreen from './Pagers/SettingsScreen';
@@ -14,6 +16,9 @@ import SplashScreen from './Pagers/SplashScreen';
 import RootStackScreen from './Pagers/RootStackScreen';
 
 import { AuthContext } from './components/context';
+import {enableLatestRenderer} from 'react-native-maps';
+
+enableLatestRenderer();
 
 const Drawer = createDrawerNavigator();
 
