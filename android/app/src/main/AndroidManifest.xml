@@ -1,14 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
-    <application>
-      <!-- You will only need to add this meta-data tag, but make sure it's a child of application -->
-    <meta-data
-      android:name="com.google.android.geo.API_KEY"
-      android:value="AIzaSyBgH6YmLchFgZIXS9C_dx08Zt_9oB-ZDEM"/>
-    </application>
-
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+   <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <application
       android:name=".MainApplication"
       android:label="@string/app_name"
@@ -16,6 +10,10 @@
       android:roundIcon="@mipmap/ic_launcher_round"
       android:allowBackup="false"
       android:theme="@style/AppTheme">
+     <meta-data
+      android:name="com.google.android.geo.API_KEY"
+      android:value="AIzaSyCtRePu3SAMzxHluV4uvdPIK8yKU7QUXY8"/>
+
       <activity
         android:name=".MainActivity"
         android:label="@string/app_name"

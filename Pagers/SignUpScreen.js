@@ -5,6 +5,9 @@ import LinearGradient from 'react-native-linear-gradient';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import * as Animatable from 'react-native-animatable';
+import SignInScreen from './SignInScreen';
+
+
 
 const SignUpScreen = ({ navigation }) => {
 
@@ -90,7 +93,7 @@ const SignUpScreen = ({ navigation }) => {
         <View style={styles.button}>
           <TouchableOpacity
             style={styles.signIn}
-            onPress={() => { loginHandle(data.username, data.password) }}>
+            onPress={() => navigation.navigate(SignUpScreen)}>
 
             <LinearGradient
               colors={['#FF6347', '#ff7759']}
