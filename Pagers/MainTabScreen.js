@@ -50,7 +50,7 @@ const MainTabScreen = () => {
         }}
       />
       <Tab.Screen
-      name="Explore"
+      name="Setting"
       component={ExploreScreen}
       options={{
         tabBarLabel: 'Home',
